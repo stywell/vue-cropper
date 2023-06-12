@@ -524,6 +524,12 @@ export default {
           canvas.height = height;
       }
 
+      // 填充背景颜色
+      if (this.fillColor) {
+        ctx.fillStyle = this.fillColor;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+
       ctx.drawImage(img, 0, 0, width, height);
       ctx.restore();
       canvas.toBlob(
